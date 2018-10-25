@@ -13,11 +13,7 @@ export class AppComponent {
 
   myChange(event) {
     console.log(event);
-    if (event.length > 0) {
-        this.disabled = false;
-    } else {
-        this.disabled = true;
-    }
+    return event.length > 0 ? this.disabled = false : this.disabled = true;
   }
 
   onResetUserName() {
