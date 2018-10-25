@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular';
+  hiddenP = false;
+  hideArray = [];
+
+    hideP() {
+        this.hiddenP = !this.hiddenP;
+        this.hideArray.push(this.hiddenP);
+        console.log(this.hideArray);
+    }
+
 }
