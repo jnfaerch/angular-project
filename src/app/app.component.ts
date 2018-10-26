@@ -16,4 +16,12 @@ export class AppComponent {
         console.log(this.hideArray);
     }
 
+    getStyleGreen() {
+        return this.hideArray.length < 5 ? true : false;
+    }
+
+    getStyleBlue() {
+        return this.hideArray.length >= 5 ? true : false;
+    }
+
 }

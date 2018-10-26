@@ -8,5 +8,5 @@
 <hr>
 <app-servers></app-servers>
 <button class="btn btn-lg btn-primary" (click)="hideP()">Display Details</button>
-<p *ngIf="hiddenP" ngClass="hideArray.length >= 5 ? 'alert alert-primary' : 'alert alert-success'">Secret Password = 1234</p>
+<p *ngIf="hiddenP" class="alert" [ngClass]="{ 'alert-primary': getStyleBlue(), 'alert-success': getStyleGreen() }">Secret Password = 1234</p>
 </div>
