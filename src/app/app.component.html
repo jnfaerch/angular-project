@@ -8,4 +8,16 @@
     </div>
 </div>
 <hr>
-<app-game-control></app-game-control>
+<div class="row">
+    <div class="col col-12">
+        <app-game-control (myTimerFired)="onMyTimerFired($event)"></app-game-control>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-6">
+        <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+    </div>
+    <div class="col col-6">
+        <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+    </div>
+</div>
