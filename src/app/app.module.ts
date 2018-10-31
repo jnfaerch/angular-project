@@ -10,9 +10,6 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
-import { GameControlComponent } from './game-control/game-control.component';
-import { OddComponent } from './odd/odd.component';
-import { EvenComponent } from './even/even.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +21,6 @@ import { EvenComponent } from './even/even.component';
     RecipeListComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
-    GameControlComponent,
-    OddComponent,
-    EvenComponent,
   ],
   imports: [
     BrowserModule,
