@@ -2,8 +2,7 @@
     <div class="col col-10">
         <app-shopping-list-edit></app-shopping-list-edit>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Something</li>
-            <li class="list-group-item">Something</li>
+            <li class="list-group-item" *ngFor="let ingredient of ingredients">{{ ingredient.name }} ({{ ingredient.amount }})</li>
         </ul>
     </div>
 </div>
