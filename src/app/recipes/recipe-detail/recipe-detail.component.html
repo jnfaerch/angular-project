@@ -1,17 +1,21 @@
-<div class="row">
-    <div class="col col-12">
-        <img src="" alt="" class="img-fluid rounded">
+<div class="row mt-4 mb-4">
+    <div class="col-12">
+        <img
+            [src]="recipe.imagePath"
+            alt="{{ recipe.name }}"
+            class="img-fluid rounded"
+            style="max-height: 300px;">
     </div>
 </div>
 <div class="row">
-    <div class="col col-12">
+    <div class="col-12">
         <h5>
-            Recipe Name
+            {{ recipe.name }}
         </h5>
     </div>
 </div>
 <div class="row">
-    <div class="col col-12">
+    <div class="col-12">
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="recipeDetailDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Manage Recipe
@@ -25,12 +29,12 @@
     </div>
 </div>
 <div class="row">
-    <div class="col col-12">
-        Description
+    <div class="col-12">
+        {{ recipe.description }}
     </div>
 </div>
 <div class="row">
-    <div class="col col-12">
+    <div class="col-12">
         Ingredients
     </div>
 </div>
