@@ -1,16 +1,31 @@
+import { EventEmitter } from '@angular/core';
+
+import { Ingredient } from '../shared/ingredient.model';
 import { Recipe } from './recipe.model';
 
 export class RecipeService {
+    recipeSelected = new EventEmitter<Recipe>();
+
     private recipes: Recipe[] = [
         new Recipe(
-            'A test recipe',
+            'Hamburger with fries',
             'Simply the first recipe',
-            'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg'
+            'http://www.jalyrihgrill.com/Hamburger-Fries-6_99.jpg',
+            [
+                new Ingredient('Bun', 1),
+                new Ingredient('Meat', 1),
+                new Ingredient('Fries', 20)
+            ]
         ),
         new Recipe(
-            'Another test recipe',
+            'Vegan burger',
             'Simply the second recipe',
-            'https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg'
+            'http://www.ecotu.it/wp-content/uploads/2013/11/hamburgerlentil-620x400.jpg',
+            [
+                new Ingredient('Bun', 1),
+                new Ingredient('Grass', 10),
+                new Ingredient('Fries', 10)
+            ]
         )
     ];
 
