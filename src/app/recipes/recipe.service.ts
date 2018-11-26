@@ -9,7 +9,7 @@ export class RecipeService {
     private recipes: Recipe[] = [
         new Recipe(
             'Hamburger with fries',
-            'Simply the first recipe',
+            'Juicy burger and fries',
             'http://www.jalyrihgrill.com/Hamburger-Fries-6_99.jpg',
             [
                 new Ingredient('Bun', 1),
@@ -19,7 +19,7 @@ export class RecipeService {
         ),
         new Recipe(
             'Vegan burger',
-            'Simply the second recipe',
+            'Not as juicy and without the meat',
             'http://www.ecotu.it/wp-content/uploads/2013/11/hamburgerlentil-620x400.jpg',
             [
                 new Ingredient('Bun', 1),
