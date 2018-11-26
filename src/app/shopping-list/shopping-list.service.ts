@@ -18,4 +18,12 @@ export class ShoppingListService {
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+
+    addIngredients(ingredients: Ingredient[]) {
+        // for (let ingredient of ingredients) {
+        //     this.addIngredient(ingredient);
+        // } This method is handling each ingredient separately - Use if we want to check for ingredients already in the shopping list!
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
 }
