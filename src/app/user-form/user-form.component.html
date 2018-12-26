@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-12 col-md-4">
+        <h1>User Form</h1>
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input  type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                        ngModel
+                        name="email"
+                        email
+                        #email="ngModel">
+                    <div    *ngIf="!email.valid && email.touched"
+                            class="alert alert-danger"
+                            >E-mail is required
+                    </div>
+            </div>
+
+            <div class="form-group">
+                <label for="subscription">Subscription</label>
+                <select class="form-control"
+                        name="subscription"
+                        id="subscription"
+                        [ngModel]="defaultSubscription">
+                    <option *ngFor="let subscription of subscriptions"
+                            [value]="subscription">{{ subscription }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input  type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        ngModel
+                        required
+                        #password="ngModel">
+                <div    *ngIf="!password.valid && password.touched"
+                        class="alert alert-danger"
+                        >Password is required
+                </div>
+            </div>
+
+            <p *ngIf="!userForm.valid && userForm.touched" class="alert alert-danger">The form is invalid!</p>
+
+            <button
+                type="submit"
+                class="btn btn-success"
+                [disabled]="!userForm.valid">Submit
+            </button>
+
+        </form>
+    </div>
+</div>
