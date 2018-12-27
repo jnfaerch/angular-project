@@ -10,11 +10,7 @@ import { forbiddenNameValidator } from '../directives/forbidden-name.directive';
 })
 export class FormTemplateComponent implements OnInit {
 
-    userForm = new FormGroup({
-        'projectName': new FormControl(''),
-        'email': new FormControl(''),
-        'projectStatus': new FormControl('')
-    });
+    userForm: FormGroup;
 
     projectStatus = ['Stable', 'Critical', 'Finished'];
 
@@ -22,13 +18,13 @@ export class FormTemplateComponent implements OnInit {
 
     ngOnInit() {
         this.userForm = new FormGroup({
-            'projectName': new FormControl('', [
+            'projectName': new FormControl(null, [
                 Validators.required,
                 Validators.minLength(4),
                 forbiddenNameValidator(/test/i) // <-- Here's how you pass in the custom validator.
             ]),
-            'email': new FormControl(''),
-            'projectStatus': new FormControl('')
+            'email': new FormControl(null, [Validators.required, Validators.email]),
+            'projectStatus': new FormControl('Critical')
         });
     }
 
