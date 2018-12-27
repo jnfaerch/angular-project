@@ -1,0 +1,28 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label>
+        Project Name:
+        <input type="text" formControlName="projectName" required>
+    </label>
+
+    <label>
+        E-mail:
+        <input
+            type="email"
+            formControlName="email"
+            email
+            required>
+    </label>
+
+    <label>
+        Project Status:
+        <select formControlName="projectStatus">
+            <option [value]="status" *ngFor="let status of projectStatus">{{ status }}</option>
+        </select>
+    </label>
+    <br />
+    <button
+        type="submit"
+        >Submit
+    </button>
+</form>
+<p>Values & Status: {{ userForm.value.projectName }} {{ userForm.value.email }} {{ userForm.value.projectStatus }} {{ userForm.status }}</p>
