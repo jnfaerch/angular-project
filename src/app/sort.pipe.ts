@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SortPipe implements PipeTransform {
 
   transform(value: [{}], args?: any): any {
-      console.log(value);
       const compare = (a: any, b: any) => {
           const nameA = a.name.toUpperCase();
           const nameB = b.name.toUpperCase();
@@ -18,8 +17,6 @@ export class SortPipe implements PipeTransform {
               return comparison = -1;
           }
       };
-      console.log(
-      value.sort(compare));
       return value.sort(compare);
     }
 }
