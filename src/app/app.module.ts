@@ -17,6 +17,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
 import { ReversePipe } from './reverse.pipe';
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ReversePipe } from './reverse.pipe';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    ReversePipe
+    ReversePipe,
+    SortPipe
   ],
   imports: [
     AppRoutingModule,

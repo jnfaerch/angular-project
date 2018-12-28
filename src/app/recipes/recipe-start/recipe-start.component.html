@@ -23,14 +23,14 @@
         <ul class="list-group">
             <li
             class="list-group-item"
-            *ngFor="let server of servers"
+            *ngFor="let server of servers | sort"
             [ngClass]="getStatusClasses(server)">
             <span
-                class="badge badge-pill badge-secondary mr-2">
+                class="badge badge-pill badge-secondary mr-2 float-right">
                 {{ server.status }}
             </span>
-            <strong>{{ server.name | reverse }}</strong> |
-            {{ server.instanceType | uppercase }} |
+            <strong>{{ server.name }}</strong> |
+            {{ server.instanceType | uppercase | reverse }} |
             {{ server.started | date }}
             </li>
         </ul>
