@@ -5,4 +5,19 @@
             <router-outlet></router-outlet>
         </div>
     </div>
+    <hr style="border: 1px solid black">
+    <div class="row">
+        <div class="col-12">
+            <input type="text" #serverName>
+            <button class="btn btn-primary ml-2" (click)="onAddServer(serverName.value)">Add Server</button>
+            <div>
+                <button class="btn btn-success mt-2" (click)="onSave()">Save Servers</button>
+                <button class="btn btn-success mt-2 ml-2" (click)="onGet()">Get Servers</button>
+            </div>
+            <hr>
+            <ul class="list-group mb-2" *ngFor="let server of servers">
+                <li class="list-group-item">{{ server.name }} (ID: {{ server.id }})</li>
+            </ul>
+        </div>
+    </div>
 </div>
