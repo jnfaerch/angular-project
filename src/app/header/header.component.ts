@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Response } from '@angular/http';
+
+import { ServerService } from '../shared/server.service';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+    constructor(private serverService: ServerService) {}
+
+    onSave() {
+        this.serverService.storeRecipes()
+            .subscribe(
+                (response: Response) => {
+                    console.log(response);
+                }
+            );
+    }
+
+    onGet() {
+        this.serverService.getRecipes();
+    }
 }
