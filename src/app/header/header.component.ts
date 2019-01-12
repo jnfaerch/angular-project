@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Response } from '@angular/http';
 
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 import { ServerService } from '../shared/server.service';
 
 @Component({
@@ -9,7 +11,9 @@ import { ServerService } from '../shared/server.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-    constructor(private serverService: ServerService) {}
+    constructor(private serverService: ServerService,
+        private authService: AuthService,
+        private router: Router) {}
 
     onSave() {
         this.serverService.storeRecipes()
@@ -22,5 +26,10 @@ export class HeaderComponent {
 
     onGet() {
         this.serverService.getRecipes();
+    }
+
+    onLogout() {
+        this.authService.logout();
+        this.router.navigate(['./signin']);
     }
 }
