@@ -23,11 +23,6 @@ export class SigninComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.authService.signinUser(email, password);
-    // This is not finished and is wrong as it redirects no matter unsuccesful login
-    setTimeout(() => {
-        this.router.navigate(['./recipes']);
-        this.serverService.getRecipes();
-    }, 1000);
   }
 
 }

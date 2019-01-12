@@ -1,7 +1,12 @@
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class AuthService {
     token: string;
+
+    constructor(private router: Router) {}
 
     signupUser(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -18,6 +23,7 @@ export class AuthService {
                 .then(
                     (token: string) => this.token = token
                 );
+            this.router.navigate(['/recipes']);
             }
         );
     }
@@ -25,6 +31,7 @@ export class AuthService {
     logout() {
         firebase.auth().signOut();
         this.token = null;
+        this.router.navigate(['/signin']);
     }
 
     getToken() {
@@ -35,7 +42,6 @@ export class AuthService {
         return this.token;
     }
 
-    // This doesn't work properly! Just sets the token state?
     isAuthenticated() {
         return this.token != null;
     }
